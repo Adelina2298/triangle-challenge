@@ -6,6 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
+/**
+ * Configuration for Jackson deserialization
+ * Disable conversion of float to int
+ */
 @Configuration
 public class DeserializationConfig {
     @Bean

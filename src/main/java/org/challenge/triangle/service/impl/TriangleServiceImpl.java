@@ -10,6 +10,15 @@ import static org.challenge.triangle.util.TriangleTypeEnum.*;
 @Service
 public class TriangleServiceImpl implements TriangleService {
 
+    /**
+     * Return type of triangle based on the following:
+     * - if all sides are equal then triangle is equilateral
+     * - if at least two sides are equals then triangle is isosceles
+     * - if none of the above then triangle is scalene
+     *
+     * @param triangle object
+     * @return type of triangle
+     */
     public String getType(Triangle triangle) {
         if (!isValid(triangle)) {
             throw new BadRequestException("Not a valid triangle");
@@ -25,6 +34,12 @@ public class TriangleServiceImpl implements TriangleService {
 
     }
 
+    /**
+     * Check if triangle is valid
+     *
+     * @param triangle object
+     * @return true if triangle is valid
+     */
     private boolean isValid(Triangle triangle) {
         if (triangle == null) {
             return false;
